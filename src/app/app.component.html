@@ -1,0 +1,41 @@
+<div class="col">
+  <div class="col-md-4" style="float:right;margin-top:10px;margin-bottom:10px;">
+      <form [formGroup]="searchForm">
+        <input
+        type="text"
+        class="form-control"
+        name="searchString"
+        placeholder="Type to search..."
+        formControlName="email"
+      />
+      </form>
+  </div>
+  <table class="table" style="margin-top:26px;">
+    <thead>
+      <tr>
+        <th scope="col">_id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+        <th scope="col">qtech </th>
+        <th scope="col">qbiz </th>
+        <th scope="col">arq </th>
+        <th scope="col">sqfrancobpo </th>
+        <th scope="col">mm</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ="let user of users | filter : searchString; let i = index">
+        <th scope="row">{{user._id}}</th>
+        <td>{{user.n}}</td>
+        <td>{{user.e}}</td>
+        <td>{{user.rl}}</td>
+        <td>{{user.qtech}}</td>
+        <td>{{user.qbiz}}</td>
+        <td>{{user.arq}}</td>
+        <td>{{user.sqfrancobpo}}</td>
+        <td>{{user.mm}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
